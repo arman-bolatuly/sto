@@ -9,9 +9,8 @@ import {
   Menu,
   rem,
   UnstyledButton,
-  SegmentedControl,
 } from '@mantine/core'
-import { forwardRef, useState } from 'react'
+import { forwardRef } from 'react'
 import { useDisclosure } from '@mantine/hooks'
 import { useNavigate, Outlet } from 'react-router-dom'
 import {
@@ -25,7 +24,6 @@ import {
   IconLogout,
 } from '@tabler/icons-react'
 
-import SideMenu from './SideMenu'
 import UserSideMenu from './UserSideMenu'
 
 interface UserButtonProps extends React.ComponentPropsWithoutRef<'button'> {
@@ -67,8 +65,6 @@ const UserButton = forwardRef<HTMLButtonElement, UserButtonProps>(
 
 const Layouts = () => {
   const navigate = useNavigate()
-
-  const [value, setValue] = useState('user')
 
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure()
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true)
@@ -116,16 +112,6 @@ const Layouts = () => {
           </Title>
 
           <div className="flex items-center space-x-2 ml-auto">
-            <SegmentedControl
-              color="teal"
-              value={value}
-              onChange={setValue}
-              data={[
-                { label: 'Admin', value: 'admin' },
-                { label: 'User', value: 'user' },
-              ]}
-            />
-
             <ActionIcon variant="transparent">
               <IconBell color="#FFFFFF" />
             </ActionIcon>
@@ -232,16 +218,11 @@ const Layouts = () => {
             </Text>
           </div>
 
-          {value === 'admin' ? <SideMenu /> : <UserSideMenu />}
+          <UserSideMenu />
         </AppShell.Navbar>
       )}
 
-      <AppShell.Main
-        bg={'#0D1D29'}
-        // className="bg-gradient-to-b from-[#0D1D29] via-[#0D1D29] to-[#0D1D29]"
-        // p={8}
-        // m={16}
-      >
+      <AppShell.Main bg={'#0D1D29'}>
         <div className="p-4 overflow-auto">
           <Outlet />
         </div>

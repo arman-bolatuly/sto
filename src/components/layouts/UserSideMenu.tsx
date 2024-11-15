@@ -3,6 +3,7 @@ import {
   IconUserCog,
   IconFileDollar,
   IconArrowsExchange2,
+  IconCoinTaka,
 } from '@tabler/icons-react'
 
 const UserMenuSection = [
@@ -16,10 +17,20 @@ const UserMenuSection = [
     icon: IconArrowsExchange2,
     link: '/trade',
   },
+  // {
+  //   label: 'Wallets',
+  //   icon: IconFileDollar,
+  //   link: '/wallets',
+  // },
   {
-    label: 'Wallets',
+    label: 'Tokens',
+    icon: IconCoinTaka,
+    link: '/tokens',
+  },
+  {
+    label: 'Cases',
     icon: IconFileDollar,
-    link: '/wallets',
+    link: '/cases',
   },
 ]
 

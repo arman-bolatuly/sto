@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'TTCommons-normal';
+  src: url('./TT_Commons_Pro_Trial_Normal.woff2') format('woff2');
+  /* font-weight: 450; */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTCommons-medium';
+  src: url('./TT_Commons_Pro_Trial_Medium.woff2') format('woff2');
+  /* font-weight: 500; */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTCommons-demibold';
+  src: url('./TT_Commons_Pro_Trial_DemiBold.woff2') format('woff2');
+  /* font-weight: 600; */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTCommons-expandedBold';
+  src: url('./TT_Commons_Pro_Trial_Expanded_DemiBold.woff2') format('woff2');
+  /* font-weight: 700; */
+  font-style: normal;
+}

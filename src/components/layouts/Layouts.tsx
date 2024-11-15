@@ -25,6 +25,7 @@ import {
 } from '@tabler/icons-react'
 
 import UserSideMenu from './UserSideMenu'
+import { store } from '../../store'
 
 interface UserButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   image: string
@@ -187,6 +188,11 @@ const Layouts = () => {
                   leftSection={
                     <IconLogout style={{ width: rem(14), height: rem(14) }} />
                   }
+                  onClick={() => {
+                    store.auth.isAuth = false
+                    navigate('/login')
+                    localStorage.removeItem('token')
+                  }}
                 >
                   Logout
                 </Menu.Item>
